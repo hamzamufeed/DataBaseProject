@@ -1,0 +1,85 @@
+create database Company;
+use Company;
+
+create table employee (
+id integer,
+manager_id integer,
+ename varchar(32),
+address varchar(32),
+salary double,
+working_hours integer,
+phone_num integer,
+primary key(id));
+
+create table delegate (
+id integer,
+manager_id integer,
+ename varchar(32),
+address varchar(32),
+salary double,
+working_hours integer,
+phone_num integer,
+Dist_area varchar(20),
+primary key(id));
+
+create table clients(
+cid integer,
+cname varchar(32),
+area varchar(30),
+delegate_id int,
+phone_num int,
+debt int,
+primary key (cid),
+foreign key (delegate_id) references delegate(id));
+
+create table supplying_company(
+company_name varchar(40),
+financial_value double,
+primary key(company_name));
+ 
+create table goods(
+supp_comp varchar(40),
+product_id integer,
+product_name varchar(40),
+ptype varchar(30),
+wholesale_price double,
+retail_price double,
+goods_count integer,
+storage_location varchar(30),
+exp_date Date,
+primary key(product_id,product_name),
+foreign key(supp_comp) references supplying_company(company_name),
+foreign key(storage_location) references company(storage_locations));
+
+ create table orders(
+order_num integer,
+cid int,
+order_date Date,
+primary key(order_num) ,
+foreign key (cid) references clients(cid));
+
+create table order_line (
+order_num integer,      
+product_id integer,
+product_name varchar(32),
+product_count integer,
+price double,
+primary key(order_num,product_id),
+foreign key(order_num) references orders(order_num),
+foreign key (product_id) references goods(product_id));
+
+create table bill(
+bill_num int,
+cid int,
+total_price double,
+debts double,
+bill_date date,
+order_num int,
+isPaid boolean,
+primary key(bill_num),
+foreign key(cid) references clients(cid),
+foreign key(order_num) references order_line(order_num));
+
+create table company(
+storage_locations varchar(30),
+primary key(storage_locations));

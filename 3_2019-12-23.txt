@@ -1,0 +1,14 @@
+Bill Number: 3
+Client ID: 3
+Order Number: 3
+
+Product ID: 3
+Product Name: product3
+Product Count: 10
+Price Per Piece: 60
+
+Cash Value: 600
+Debt Value: 0
+Date: 2019-12-23
+Paid: 0
+

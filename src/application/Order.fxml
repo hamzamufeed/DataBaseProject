@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #4B0082;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.OrderController">
+   <children>
+      <SplitPane layoutX="334.0" layoutY="110.0" orientation="VERTICAL" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #000000;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <SplitPane layoutX="266.0" layoutY="102.0" prefHeight="481.6" prefWidth="798.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <ImageView fitHeight="869.0" fitWidth="638.0" layoutX="63.0" layoutY="-137.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+                                 <image>
+                                    <Image url="@../../0358573a08ec4a5.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Button fx:id="company" blendMode="OVERLAY" layoutX="-2.0" mnemonicParsing="false" onAction="#companyOnAction" prefHeight="58.0" prefWidth="234.0" text="Comapny">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Button>
+                              <Button fx:id="employee" blendMode="OVERLAY" layoutX="-2.0" layoutY="61.0" mnemonicParsing="false" onAction="#employeeOnAction" prefHeight="58.0" prefWidth="234.0" text="Employee">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Button>
+                              <Button fx:id="client" blendMode="OVERLAY" layoutX="-2.0" layoutY="120.0" mnemonicParsing="false" onAction="#clientOnAction" prefHeight="58.0" prefWidth="234.0" text="Client">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Button>
+                              <Button fx:id="order" blendMode="OVERLAY" layoutX="-2.0" layoutY="178.0" mnemonicParsing="false" onAction="#orderOnAction" prefHeight="58.0" prefWidth="234.0" text="Order">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Button>
+                              <Button fx:id="goods" blendMode="OVERLAY" layoutX="-2.0" layoutY="240.0" mnemonicParsing="false" onAction="#goodsOnAction" prefHeight="58.0" prefWidth="234.0" text="Goods">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Button>
+                              <Separator layoutX="224.0" layoutY="-1.0" orientation="VERTICAL" prefHeight="600.0" prefWidth="20.0" />
+                              <Separator layoutX="-2.0" layoutY="58.0" prefHeight="3.0" prefWidth="234.0" />
+                              <Separator layoutX="-2.0" layoutY="117.0" prefHeight="0.0" prefWidth="234.0" />
+                              <Separator layoutY="118.0" prefHeight="3.0" prefWidth="234.0" />
+                              <Separator layoutY="178.0" prefHeight="3.0" prefWidth="234.0" />
+                              <Separator layoutY="238.0" prefHeight="3.0" prefWidth="234.0" />
+                              <TableView fx:id="orders_table" editable="true" layoutX="251.0" layoutY="60.0" prefHeight="312.0" prefWidth="514.0">
+                                <columns>
+                                  <TableColumn fx:id="orderNum_col" prefWidth="76.79995727539062" text="Order Num" />
+                                    <TableColumn fx:id="clientID_col" prefWidth="62.4000244140625" text="Client ID" />
+                                    <TableColumn fx:id="productID_col" prefWidth="84.0" text="Product ID" />
+                                    <TableColumn fx:id="productName_col" prefWidth="95.199951171875" text="Product Name" />
+                                    <TableColumn fx:id="productCount_col" prefWidth="92.800048828125" text="Product Count" />
+                                    <TableColumn fx:id="date_col" prefWidth="100.80002441406248" text="Date" />
+                                </columns>
+                              </TableView>
+                              <TextField fx:id="search_bar" layoutX="251.0" layoutY="17.0" prefHeight="26.0" prefWidth="281.0" promptText="Search" />
+                              <RadioButton fx:id="search_client" layoutX="633.0" layoutY="8.0" mnemonicParsing="false" selected="true" text="By Client ID" textFill="WHITE">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="Search" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="search_product" layoutX="633.0" layoutY="34.0" mnemonicParsing="false" text="By Product ID" textFill="WHITE" toggleGroup="$Search" />
+                              <Button fx:id="delete" layoutX="699.0" layoutY="382.0" mnemonicParsing="false" onAction="#deleteOrders" prefHeight="26.0" prefWidth="83.0" text="Delete" />
+                              <Button fx:id="refresh" layoutX="699.0" layoutY="419.0" mnemonicParsing="false" onAction="#refreshOrders" prefHeight="26.0" prefWidth="83.0" text="Refresh" />
+                              <Button fx:id="search" layoutX="537.0" layoutY="17.0" mnemonicParsing="false" onAction="#searchOrders" prefHeight="26.0" prefWidth="83.0" text="Search" />
+                              <TextArea fx:id="billDetails" editable="false" layoutX="251.0" layoutY="383.0" prefHeight="195.0" prefWidth="344.0" promptText="Bill details">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></TextArea>
+                              <Button fx:id="save" layoutX="605.0" layoutY="419.0" mnemonicParsing="false" onAction="#saveBill" prefHeight="26.0" prefWidth="83.0" text="Save Bill" />
+                              <Button fx:id="getbill_button" layoutX="605.0" layoutY="382.0" mnemonicParsing="false" onAction="#getBill" prefHeight="26.0" prefWidth="83.0" text="Get Bill" />
+                              <Button fx:id="confirm" layoutX="699.0" layoutY="463.0" mnemonicParsing="false" onAction="#confirmBill" prefHeight="26.0" prefWidth="83.0" text="Confirm Bill" />
+                              <RadioButton fx:id="paid" layoutX="605.0" layoutY="459.0" mnemonicParsing="false" text="Paid">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="ConfirmBill" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="notPaid" layoutX="605.0" layoutY="485.0" mnemonicParsing="false" selected="true" text="Not Paid" toggleGroup="$ConfirmBill" />
+                              <Separator layoutY="298.0" prefHeight="3.0" prefWidth="234.0" />
+                              <Button fx:id="report" blendMode="OVERLAY" layoutY="299.0" mnemonicParsing="false" onAction="#reportOnAction" prefHeight="58.0" prefWidth="234.0" text="Report">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Button>
+                              <Separator layoutX="-2.0" layoutY="358.0" prefHeight="3.0" prefWidth="234.0" />
+                              <Button fx:id="logOut" blendMode="OVERLAY" layoutY="358.0" mnemonicParsing="false" onAction="#logOut" prefHeight="58.0" prefWidth="234.0" text="Log Out">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Button>
+                              <Separator layoutY="417.0" prefHeight="3.0" prefWidth="234.0" />
+                           </children></AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

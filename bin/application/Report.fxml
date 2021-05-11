@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #37FFA6;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ReportController">
+   <children>
+      <SplitPane layoutX="334.0" layoutY="110.0" orientation="VERTICAL" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #000000;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <SplitPane layoutX="266.0" layoutY="102.0" prefHeight="481.6" prefWidth="798.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <ImageView fitHeight="939.0" fitWidth="745.0" layoutX="51.0" layoutY="-200.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+                                 <image>
+                                    <Image url="@../../0358573a08ec4a5.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Button fx:id="company" blendMode="OVERLAY" layoutX="-2.0" mnemonicParsing="false" onAction="#companyOnAction" prefHeight="58.0" prefWidth="234.0" text="Comapny">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Button>
+                              <Button fx:id="employee" blendMode="OVERLAY" layoutX="-2.0" layoutY="61.0" mnemonicParsing="false" onAction="#employeeOnAction" prefHeight="58.0" prefWidth="234.0" text="Employee">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Button>
+                              <Button fx:id="client" blendMode="OVERLAY" layoutX="-2.0" layoutY="120.0" mnemonicParsing="false" onAction="#clientOnAction" prefHeight="58.0" prefWidth="234.0" text="Client">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Button>
+                              <Button fx:id="order" blendMode="OVERLAY" layoutX="-2.0" layoutY="178.0" mnemonicParsing="false" onAction="#orderOnAction" prefHeight="58.0" prefWidth="234.0" text="Order">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Button>
+                              <Button fx:id="goods" blendMode="OVERLAY" layoutX="-2.0" layoutY="240.0" mnemonicParsing="false" onAction="#goodsOnAction" prefHeight="58.0" prefWidth="234.0" text="Goods">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Button>
+                              <Separator layoutX="224.0" layoutY="-1.0" orientation="VERTICAL" prefHeight="600.0" prefWidth="20.0" />
+                              <Separator layoutX="-2.0" layoutY="58.0" prefHeight="3.0" prefWidth="234.0" />
+                              <Separator layoutX="-2.0" layoutY="117.0" prefHeight="0.0" prefWidth="234.0" />
+                              <Separator layoutY="118.0" prefHeight="3.0" prefWidth="234.0" />
+                              <Separator layoutY="178.0" prefHeight="3.0" prefWidth="234.0" />
+                              <Separator layoutY="238.0" prefHeight="3.0" prefWidth="234.0" />
+                              <Separator layoutY="298.0" prefHeight="3.0" prefWidth="234.0" />
+                              <Separator layoutY="356.0" prefHeight="3.0" prefWidth="234.0" />
+                              <Button fx:id="report" blendMode="OVERLAY" layoutY="298.0" mnemonicParsing="false" onAction="#reportOnAction" prefHeight="58.0" prefWidth="234.0" text="Report">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Button>
+                              <DatePicker fx:id="fromDate" layoutX="360.0" layoutY="60.0" prefHeight="26.0" prefWidth="152.0" promptText="From:" />
+                              <DatePicker fx:id="toDate" layoutX="523.0" layoutY="60.0" prefHeight="26.0" prefWidth="138.0" promptText="To:" />
+                              <TextField fx:id="text1" layoutX="360.0" layoutY="95.0" prefHeight="18.0" prefWidth="234.0" />
+                              <Label layoutX="257.0" layoutY="94.0" prefHeight="26.0" prefWidth="94.0" text="Number of Sales" textFill="WHITE" />
+                              <Button fx:id="confirm" layoutX="672.0" layoutY="60.0" mnemonicParsing="false" onAction="#confirmDate" prefHeight="26.0" prefWidth="74.0" text="Confirm" />
+                              <TextField fx:id="text2" layoutX="360.0" layoutY="130.0" prefHeight="18.0" prefWidth="234.0" />
+                              <Label layoutX="257.0" layoutY="129.0" prefHeight="26.0" prefWidth="94.0" text="Sales Value" textFill="WHITE" />
+                              <Label layoutX="257.0" layoutY="160.0" prefHeight="26.0" prefWidth="94.0" text="Number of " textFill="WHITE" />
+                              <Label layoutX="257.0" layoutY="176.0" prefHeight="26.0" prefWidth="94.0" text="Goods Supplied" textFill="WHITE" />
+                              <TextField fx:id="text3" layoutX="360.0" layoutY="165.0" prefHeight="18.0" prefWidth="234.0" />
+                              <Label layoutX="256.0" layoutY="200.0" prefHeight="26.0" prefWidth="94.0" text="Goods Supplied" textFill="WHITE" />
+                              <Label layoutX="257.0" layoutY="213.0" prefHeight="26.0" prefWidth="94.0" text="Value" textFill="WHITE" />
+                              <TextField fx:id="text4" layoutX="360.0" layoutY="201.0" prefHeight="18.0" prefWidth="234.0" />
+                              <Button fx:id="logOut" blendMode="OVERLAY" layoutY="357.0" mnemonicParsing="false" onAction="#logOut" prefHeight="58.0" prefWidth="234.0" text="Log Out">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Button>
+                              <Separator layoutY="413.0" prefHeight="3.0" prefWidth="234.0" />
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
